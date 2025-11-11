@@ -1,0 +1,69 @@
+# Build directories
+build/
+filament_build/
+libpng_build/
+pass_evaluation/
+
+# Ignore everything in build_demo except .sh files
+build_demo/*
+!build_demo/**/*.sh
+!build_demo/**/*.py
+
+# Ignore demo subdirectories (they are git repos)
+demo/filament/
+demo/libjpeg-turbo/
+demo/libpng/
+demo/libvips/
+demo/opencv/
+demo/stb/
+
+# LLVM specific files
+*.bc
+*.ll
+
+# Compiled executables and binaries
+imagemagick_*
+libpng_*
+opencv_*
+stb_*
+test_*
+*.o
+*.so
+*.dylib
+
+# Output files
+*.txt
+pass_output.txt
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.log
+
+CustomC/
+benchmarks/
+
+# Ignore demo subdirectories (they are git repos)
+demo/filament/
+demo/libjpeg-turbo/
+demo/libpng/
+demo/libvips/
+demo/opencv/
+demo/stb/
+benchmarks/
