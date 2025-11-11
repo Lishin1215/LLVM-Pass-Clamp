@@ -143,11 +143,37 @@ bash libpng_application_compile.sh
 
 ## Performance Evaluation
 
-Use the provided Python script to analyze optimization effectiveness:
+### Analyze IR Instruction Count
+
+Use the provided Python script to count and compare LLVM IR instructions:
 
 ```bash
 cd build_demo
 
-# Analyze IR instruction count
-python3 count_instructions_final.py <ir_file.ll>
+# Analyze IR instruction count for unoptimized version
+python3 count_instructions_final.py ./build_stb/llvm_pass_application_o3.ll
+
+# Analyze IR instruction count for optimized version
+python3 count_instructions_final.py ./build_stb/llvm_pass_application_o3_mypass_o3.ll
 ```
+
+### Measure Runtime Performance
+
+Use `perf` to measure execution time and performance metrics:
+
+```bash
+cd build_demo/build_stb
+
+# Measure unoptimized version
+perf stat ./llvm_pass_application_o3
+
+# Measure optimized version
+perf stat ./llvm_pass_application_o3_mypass_o3
+```
+
+The `perf stat` command will show:
+- Total execution time
+- CPU cycles
+- Instructions executed
+- Cache misses
+- And other performance counters
